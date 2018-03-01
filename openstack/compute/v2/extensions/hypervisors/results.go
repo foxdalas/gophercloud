@@ -31,6 +31,11 @@ type Service struct {
 	DisabledReason string `json:"disabled_reason"`
 }
 
+type Server struct {
+	Name string `json:"name"`
+	UUID string `json:"uuid"`
+}
+
 // Hypervisor represents a hypervisor in the OpenStack cloud.
 type Hypervisor struct {
 	// A structure that contains cpu information like arch, model, vendor,
@@ -45,6 +50,9 @@ type Hypervisor struct {
 
 	// Status of the hypervisor, either "enabled" or "disabled".
 	Status string `json:"status"`
+
+
+	Servers []Server `json:"servers"`
 
 	// State of the hypervisor, either "up" or "down".
 	State string `json:"state"`
